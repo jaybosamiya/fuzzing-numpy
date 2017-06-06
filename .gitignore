@@ -1,5 +1,7 @@
+data.pickle
 venv/
 py/
+crashes/
 
 # Created by https://www.gitignore.io/api/c,vim,c++,linux,emacs,python
 
