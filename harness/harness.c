@@ -12,7 +12,7 @@
 #include <time.h>
 
 #define DEBUG_LEVEL DEBUG_3
-#define TEST_CASE_SIZE (1<<30)
+#define TEST_CASE_SIZE (1<<20)
 
 typedef enum {FATAL, VERBOSE, DEBUG, DEBUG_2, DEBUG_3} debug_t;
 const char* debug_messages[] = {"!! FATAL !!","+",">", ">>", ">>>"};
