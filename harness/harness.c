@@ -18,7 +18,7 @@ typedef enum {FATAL, VERBOSE, DEBUG, DEBUG_2, DEBUG_3} debug_t;
 const char* debug_messages[] = {"!! FATAL !!","+",">", ">>", ">>>"};
 
 /* Externally accessible functions */
-void testcase(const char *t);
+void register_testcase(const char *t);
 
 /* Internals for the .so */
 static char * current_test_case;
@@ -49,7 +49,7 @@ void init() {
   debug(DEBUG_3, "Current PID = %u", getpid());
 }
 
-void testcase(const char *t) {
+void register_testcase(const char *t) {
   strcpy(current_test_case, t);
 }
 
