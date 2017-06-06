@@ -20,7 +20,7 @@ echo '>>> Set up virtualenv'
 py/bin/python3 -m venv venv
 
 echo '>>> Activate virtualenv (from now on: python, pip etc will be in venv)'
-source venv/bin/activate
+. venv/bin/activate
 
 echo '>>> Set up numpy'
 pip install numpy
