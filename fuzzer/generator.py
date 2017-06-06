@@ -1,5 +1,6 @@
 import random
 import numpy as np
+import pickle
 
 exclude = ['lookfor','memmap','fromregex', 'fromfile', 'chararray',
            'show_config']
@@ -17,6 +18,12 @@ data_possibilities = [
 
 data_types = []
 
+try:
+    with open('data.pickle', 'rb') as f:
+        data_possibilities, data_types = pickle.load(f)
+except FileNotFoundError:
+    pass
+
 def generate():
     c = random.choice(callables)
     vals = ', '.join(
@@ -31,10 +38,14 @@ def generate():
 
 def register(t):
     te = eval(t, {'np':np})
-    tt = type(te)
+    tt = str(type(te))
     if tt not in data_types:
         data_possibilities.append(t)
         data_types.append(tt)
     elif random.randint(0, 10**5) == 0:
         data_possibilities.append(t)
-    pass
+    else:
+        return
+
+    with open('data.pickle', 'wb') as f:
+        pickle.dump((data_possibilities, data_types), f)
