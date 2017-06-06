@@ -1,7 +1,8 @@
 import random
 import numpy as np
 
-exclude = ['lookfor','memmap','fromregex', 'fromfile', 'chararray']
+exclude = ['lookfor','memmap','fromregex', 'fromfile', 'chararray',
+           'show_config']
 callables = [a
              for a in dir(np)
              if a not in exclude and callable(getattr(np,a))]
@@ -29,5 +30,11 @@ def generate():
     return t
 
 def register(t):
-    # TODO: Use the generated valid code to seed the fuzzer more
+    te = eval(t, {'np':np})
+    tt = type(te)
+    if tt not in data_types:
+        data_possibilities.append(t)
+        data_types.append(tt)
+    elif random.randint(0, 10**5) == 0:
+        data_possibilities.append(t)
     pass
