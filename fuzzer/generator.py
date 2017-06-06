@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-exclude = ['tile','blackman','diag_indices']
+exclude = ['lookfor','memmap']
 callables = [a
              for a in dir(np)
              if a not in exclude and callable(getattr(np,a))]
@@ -9,8 +9,8 @@ callables = [a
 data_possibilities = [
     '"A"', '("A"*0x100)', '("A"*0x1000)',
     '0', '1', '-1',
-    '(2**32)', '(2**32+1)', '(2**32-1)',
-    '(2**64)', '(2**64+1)', '(2**64-1)',
+    # '(2**32)', '(2**32+1)', '(2**32-1)',
+    # '(2**64)', '(2**64+1)', '(2**64-1)',
     '[]','()','{}', 'set()',
 ]
 
