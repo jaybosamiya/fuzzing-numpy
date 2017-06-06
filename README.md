@@ -7,4 +7,8 @@ This repository contains my explorations and experimentations in trying to fuzz 
 
 ## Usage
 
-Compile CPython and Numpy with ASAN (address sanitizer). Then, use the various scripts in this repo, to find bugs.
+Run `./first_run.sh` to download and compile CPython and Numpy with
+ASAN (address sanitizer).
+
+Then, use `wrapper.sh` to start the fuzzer, and watch the crashing
+inputs get dropped into the `crashes` directory.
