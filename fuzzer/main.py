@@ -3,7 +3,7 @@ from ctypes import CDLL
 import numpy as np
 
 # Initializes the harness and sets it up for work
-harness = CDLL("../harness/harness.so")
+harness = CDLL("harness/harness.so")
 
 while True:
     t = generator.generate()
