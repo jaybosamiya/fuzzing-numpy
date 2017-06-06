@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 
 exclude = ['lookfor','memmap','fromregex', 'fromfile', 'chararray',
-           'show_config']
+           'show_config', 'save', 'savez', 'savez_compressed']
 callables = [a
              for a in dir(np)
              if a not in exclude and callable(getattr(np,a))]
