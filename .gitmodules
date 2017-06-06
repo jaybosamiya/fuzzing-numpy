@@ -1,3 +1,6 @@
 [submodule "cpython"]
 	path = cpython
 	url = https://github.com/python/cpython/
+[submodule "numpy"]
+	path = numpy
+	url = https://github.com/numpy/numpy/
