@@ -7,7 +7,7 @@ harness = CDLL("harness/harness.so")
 
 while True:
     t = generator.generate()
-    harness.register_testcase(t)
+    harness.register_testcase(bytes(t, 'ascii'))
     try:
         exec(t, {'np':np})
     except:
