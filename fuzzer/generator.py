@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-exclude = ['lookfor','memmap']
+exclude = ['lookfor','memmap','fromregex', 'fromfile', 'chararray']
 callables = [a
              for a in dir(np)
              if a not in exclude and callable(getattr(np,a))]
