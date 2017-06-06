@@ -42,9 +42,11 @@ void init() {
   debug(DEBUG, "Created mmap'd region at %p", current_test_case);
 
   if ( signal(SIGSEGV, sighandler) == SIG_ERR )
-    fatal_err("Failed setting up sighandler");
+    fatal_err("Failed setting up sighandler for SIGSEGV");
+  if ( signal(SIGABRT, sighandler) == SIG_ERR )
+    fatal_err("Failed setting up sighandler for SIGABRT");
 
-  debug(DEBUG, "Set up signal handler for SIGSEGV");
+  debug(DEBUG, "Set up signal handlers");
 
   debug(DEBUG_3, "Current PID = %u", getpid());
 }
