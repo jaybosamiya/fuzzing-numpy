@@ -5,7 +5,8 @@ import pickle
 exclude = ['lookfor', 'memmap', 'fromregex', 'fromfile', 'chararray',
            'show_config', 'save', 'savez', 'savez_compressed',
            'int_asbuffer']
-callables = [a
+
+callables = ['np.'+a
              for a in dir(np)
              if a not in exclude and callable(getattr(np,a))]
 
@@ -31,7 +32,7 @@ def generate():
         random.choice(data_possibilities)
         for _ in range(random.randint(0, 5))
     )
-    t = "np.%s(%s)" % (c, vals)
+    t = "%s(%s)" % (c, vals)
 
     print ("-----------------------------------\n%s\n--------------" % t)
 
