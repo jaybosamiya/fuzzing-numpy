@@ -43,6 +43,12 @@ def register(t):
     if tt not in data_types:
         data_possibilities.append(t)
         data_types.append(tt)
+        for a in dir(te):
+            try:
+                if callable(getattr(te,a)):
+                    callables.append(t + '.' + a)
+            except TypeError: # Happens sometimes for data attribute of np.Str_ objects
+                pass
     elif random.randint(0, 10**5) == 0:
         data_possibilities.append(t)
     else:
