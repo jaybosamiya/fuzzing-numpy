@@ -22,7 +22,7 @@ except FileNotFoundError:
         '[]','()','{}', 'set()',
     ]
 
-    data_types = []
+    data_types = set()
 
 
 def generate():
@@ -40,19 +40,15 @@ def generate():
 def register(t):
     te = eval(t, {'np':np})
     tt = str(type(te))
-    if tt not in data_types:
+    if (tt not in data_types) or (random.randint(0, 10**5) == 0):
         data_possibilities.append(t)
-        data_types.append(tt)
+        data_types.add(tt)
         for a in dir(te):
             try:
                 if callable(getattr(te,a)):
                     callables.append(t + '.' + a)
             except TypeError: # Happens sometimes for data attribute of np.Str_ objects
                 pass
-    elif random.randint(0, 10**5) == 0:
-        data_possibilities.append(t)
-    else:
-        return
 
-    with open('data.pickle', 'wb') as f:
-        pickle.dump((callables, data_possibilities, data_types), f)
+        with open('data.pickle', 'wb') as f:
+            pickle.dump((callables, data_possibilities, data_types), f)
