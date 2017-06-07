@@ -18,6 +18,27 @@ ASAN (address sanitizer).
 Then, use `./wrapper.sh` to start the fuzzer, and watch the crashing
 inputs get dropped into the `crashes` directory.
 
+### Quick Start
+
+It is possible to start off quickly by spinning up a new virtual
+machine, and running the fuzzer inside it (it also would prevent any
+unintended side-effects that might occur due to fuzzing).
+
+This has been implemented as a `Vagrantfile` in this directory itself,
+which runs an Ubuntu-14.04 virtual machine with all required
+configuration etc, and auto-starts the fuzzing process into the
+background whenever it boots. It can be booted simply by running
+`vagrant up` inside this repository. Following this, running `vagrant
+ssh` will let you access the box, where the running process can be
+seen with `screen -r` (and disconnected without killing by pressing
+Ctrl+a, d). To stop the fuzzer and the virtual machine, merely run
+`vagrant halt`.
+
+**Note:** Starting up the vagrant box also creates a `crashes/`
+directory in the repository directory, which is symlinked inside the
+virtual machine, so that the crashes can be obtained outside the VM
+wiht ease.
+
 ## Structure of the Fuzzer
 
 The fuzzer consists of multiple parts working in unison to lead to
