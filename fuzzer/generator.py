@@ -22,7 +22,7 @@ data_types = []
 
 try:
     with open('data.pickle', 'rb') as f:
-        data_possibilities, data_types = pickle.load(f)
+        callables, data_possibilities, data_types = pickle.load(f)
 except FileNotFoundError:
     pass
 
@@ -50,4 +50,4 @@ def register(t):
         return
 
     with open('data.pickle', 'wb') as f:
-        pickle.dump((data_possibilities, data_types), f)
+        pickle.dump((callables, data_possibilities, data_types), f)
