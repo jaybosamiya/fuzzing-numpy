@@ -2,29 +2,28 @@ import random
 import numpy as np
 import pickle
 
-exclude = ['lookfor', 'memmap', 'fromregex', 'fromfile', 'chararray',
-           'show_config', 'save', 'savez', 'savez_compressed',
-           'int_asbuffer']
-
-callables = ['np.'+a
-             for a in dir(np)
-             if a not in exclude and callable(getattr(np,a))]
-
-data_possibilities = [
-    '"A"', '("A"*0x100)', '("A"*0x1000)',
-    '0', '1', '-1',
-    '(2**32)', '(2**32+1)', '(2**32-1)',
-    '(2**64)', '(2**64+1)', '(2**64-1)',
-    '[]','()','{}', 'set()',
-]
-
-data_types = []
-
 try:
     with open('data.pickle', 'rb') as f:
         callables, data_possibilities, data_types = pickle.load(f)
 except FileNotFoundError:
-    pass
+    exclude = ['lookfor', 'memmap', 'fromregex', 'fromfile', 'chararray',
+               'show_config', 'save', 'savez', 'savez_compressed',
+               'int_asbuffer']
+
+    callables = ['np.'+a
+                 for a in dir(np)
+                 if a not in exclude and callable(getattr(np,a))]
+
+    data_possibilities = [
+        '"A"', '("A"*0x100)', '("A"*0x1000)',
+        '0', '1', '-1',
+        '(2**32)', '(2**32+1)', '(2**32-1)',
+        '(2**64)', '(2**64+1)', '(2**64-1)',
+        '[]','()','{}', 'set()',
+    ]
+
+    data_types = []
+
 
 def generate():
     c = random.choice(callables)
