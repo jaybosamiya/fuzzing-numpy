@@ -7,6 +7,7 @@ git submodule update
 echo '>>> Set up config options'
 export CC="$(which clang) -g3 -fsanitize=address"
 export CXX="$(which clang++) -g3 -fsanitize=address"
+export LSAN_OPTIONS=exitcode=0
 
 echo '>>> Set up cpython'
 mkdir py
