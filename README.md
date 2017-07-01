@@ -1,4 +1,5 @@
 # Fuzzing Numpy
+[![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/jaybosamiya/fuzzing-numpy/master/LICENSE) [![GitHub stars](https://img.shields.io/github/stars/jaybosamiya/fuzzing-numpy.svg)](https://github.com/jaybosamiya/fuzzing-numpy/stargazers) [![Twitter](https://img.shields.io/twitter/url/https/github.com/jaybosamiya/fuzzing-numpy.svg?style=social)](https://twitter.com/intent/tweet?text=Wow!%20Check%20out%20fuzzing-numpy%20by%20@jay_f0xtr0t&url=https://github.com/jaybosamiya/fuzzing-numpy)
 > :snake: Experimentations in trying to find 0-days in numpy
 
 Inspired by Murmus CTF's amazing
@@ -76,16 +77,7 @@ effective finding of bugs.
 
 ## [License](LICENSE)
 
-    Copyright 2017 Jay Bosamiya
+Copyright 2017 Jay Bosamiya
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+All files and works in this repository are licensed under
+the [Apache License, Version 2.0](LICENSE)
