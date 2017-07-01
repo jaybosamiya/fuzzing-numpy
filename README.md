@@ -1,10 +1,12 @@
 # Fuzzing Numpy
 > :snake: Experimentations in trying to find 0-days in numpy
 
-Inspired by Murmus CTF's
+Inspired by Murmus CTF's amazing
 [live streams](https://www.youtube.com/playlist?list=PLfERMgzlCp0Czg0MiLrfyqrahHMmzsCI6) on
 fuzzing numpy, I decided to write my own custom fuzzer as well, and
 try to fuzz numpy.
+
+You can find my notes on [the basics of fuzzing](https://github.com/jaybosamiya/security-notes#basics-of-fuzzing) and [genetic fuzzing](https://github.com/jaybosamiya/security-notes#genetic-fuzzing) on my [security-notes](https://github.com/jaybosamiya/security-notes) repo. These notes were inspired by live streams by Gynvael Coldwind (links [#1](https://www.youtube.com/watch?v=BrDujogxYSk) [#2](https://www.youtube.com/watch?v=JhsHGms_7JQ) [#3](https://www.youtube.com/watch?v=HN_tI601jNU)).
 
 This repository contains my explorations and experimentations in
 trying to fuzz numpy. Over time, I might expand into fuzzing other
